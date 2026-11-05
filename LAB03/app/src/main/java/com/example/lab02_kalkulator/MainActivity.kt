@@ -23,16 +23,9 @@ class MainActivity : AppCompatActivity() {
         tvResult = findViewById(R.id.tvResult)
 
         val numberButtons = listOf(
-            Pair(R.id.btn0, "0"),
-            Pair(R.id.btn1, "1"),
-            Pair(R.id.btn2, "2"),
-            Pair(R.id.btn3, "3"),
-            Pair(R.id.btn4, "4"),
-            Pair(R.id.btn5, "5"),
-            Pair(R.id.btn6, "6"),
-            Pair(R.id.btn7, "7"),
-            Pair(R.id.btn8, "8"),
-            Pair(R.id.btn9, "9")
+            Pair(R.id.btn0, "0"), Pair(R.id.btn1, "1"), Pair(R.id.btn2, "2"),
+            Pair(R.id.btn3, "3"), Pair(R.id.btn4, "4"), Pair(R.id.btn5, "5"),
+            Pair(R.id.btn6, "6"), Pair(R.id.btn7, "7"), Pair(R.id.btn8, "8"), Pair(R.id.btn9, "9")
         )
 
         for ((id, digit) in numberButtons) {
@@ -49,7 +42,6 @@ class MainActivity : AppCompatActivity() {
 
         val operatorButtons = listOf(
             Pair(R.id.btnPlus, "+"),
-            Pair(R.id.btnEquals, "-"),
             Pair(R.id.btnMultiply, "*"),
             Pair(R.id.btnDivide, "/")
         )
@@ -71,7 +63,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "Wykonywanie obliczenia: $firstValue $currentOperator $secondValue")
                 val result = when (currentOperator) {
                     "+" -> firstValue + secondValue
-                    "-" -> firstValue - secondValue
                     "*" -> firstValue * secondValue
                     "/" -> if (secondValue != 0.0) firstValue / secondValue else 0.0
                     else -> 0.0
